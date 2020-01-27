@@ -1,0 +1,43 @@
+
+<br>
+<div class="jumbotron no-gutters" >
+  <div class="row">
+  <div class="col-sm-8">
+    <h3> Logowanie </h3>
+<div [hidden]="submitted" >
+  <form (ngSubmit)="onSubmit()">
+    <ul>
+      <li>
+        <div class="form-group">
+          <label class="col-form-label" for="username">Login {{user.login}}</label>
+          <input type="text" class="form-control" name="username" placeholder="Login" required [(ngModel)]="username" id="username">
+        </div>
+      </li>
+      <li>
+        <div class="form-group">
+          <label for="password">Hasło: </label>
+          <input type="text" class="form-control" id="password" required [(ngModel)]="password" name="password">
+        </div>
+      </li>
+      <li>
+        <div class="btn-group">
+          <button type="submit" class="btn btn-primary" (click)="onSubmit()"> Zatwierdź </button>
+        </div>
+      </li>
+    </ul>
+  </form>
+</div>
+<div [hidden]="!submitted">
+  <h5> Zalogowany!</h5>
+  <button class="btn btn-primary" (click)="logOut()"> Wyloguj </button>
+</div>
+  </div>
+    <div class="jumbotron" >
+      <div class="col-md-2">
+        <br>
+        <img src="assets/businessman.png" class="img" width="172" height="172">
+      </div>
+    </div>
+</div>
+</div>
+
