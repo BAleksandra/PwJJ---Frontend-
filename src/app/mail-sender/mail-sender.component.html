@@ -1,0 +1,49 @@
+<div class="jumbotron no-gutters" >
+  <div class="container-fluid">
+    <div class="form-horizontal">
+      <div class="row">
+        <div class="col-md-8 text-center">
+<h3> Wiadmość </h3>
+<div [hidden]="submitted" style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+    <ul>
+        <li>
+          <div class="form-group">
+            <label for="email">e-mail</label>
+            <input type="text" class="form-control" id="email" required [(ngModel)]="me.mailSender" name="email">
+          </div>
+        </li>
+      <li>
+        <div class="form-group">
+          <label for="name">name</label>
+          <input type="text" class="form-control" id="name" required [(ngModel)]="me.title" name="name">
+        </div>
+      </li>
+      <li>
+        <div class="form-group">
+          <label for="feedback">feedback</label>
+          <input type="text" class="form-control" id="feedback" required [(ngModel)]="me.textMessage" name="feedback">
+        </div>
+      </li>
+      <li>
+        <button type="submit" class="btn btn-success">Wyślij</button>
+      </li>
+    </ul>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4> Wysłałes wiadmosc! </h4>
+  <button class="btn btn-primary" (click)="newMessage()"> Nowa wiadmosc </button>
+</div>
+  </div>
+      <div class="jumbotron" >
+        <div class="col-md-2">
+          <br>
+          <img src="assets/businessman.png" class="img" width="172" height="172">
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
